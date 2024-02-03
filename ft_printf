@@ -1,0 +1,12 @@
+
+int  ft_printf((va_list args, int c)i
+{
+	else if (c == 'x')
+		length += print_nbr_hex(va_arg(args, unsigned int),
+				"0123456789abcdef", 16);
+	else if (c == 'X')
+		length += print_nbr_hex(va_arg(args, unsigned int),
+				"0123456789ABCDEF", 16);
+	else if (c == '%')
+		length += print_char(c);
+}
