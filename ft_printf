@@ -1,6 +1,18 @@
 
 int  ft_printf((va_list args, int c)i
 {
+	if (c == 'c')
+		length += print_char((char)(va_arg(args, int)));
+	else if (c == 's')
+		length += print_str(va_arg(args, char *));
+	else if (c == 'p')
+		length += print_p((unsigned long int)va_arg(args, void *));
+	else if (c == 'd' )
+		length += print_nbr(va_arg(args, int));
+	else if (c == 'i')
+		length += print_nbr(va_arg(args, int));
+	else if (c == 'u')
+		length += print_nbr(va_arg(args, unsigned int));
 	else if (c == 'x')
 		length += print_nbr_hex(va_arg(args, unsigned int),
 				"0123456789abcdef", 16);
@@ -10,3 +22,4 @@ int  ft_printf((va_list args, int c)i
 	else if (c == '%')
 		length += print_char(c);
 }
+//edit to name i have for putnbr - dont remember
